@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covenant University Rules</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #e3f2fd;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 24px;
+            color: #0077b6;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #f8f9fa;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #0077b6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #005f8f;
+        }
+        ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            background: #caf0f8;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>What Do You Classify as Student Rules?</h2>
+        <input type="text" id="ruleInput" placeholder="Enter a student rule">
+        <button onclick="addRule()">Submit Rule</button>
+        <ul id="rulesList"></ul>
+    </div>
+
+    <script>
+        function addRule() {
+            let input = document.getElementById('ruleInput');
+            let rule = input.value.trim();
+            if (rule !== "") {
+                let li = document.createElement('li');
+                li.textContent = rule;
+                document.getElementById('rulesList').appendChild(li);
+                input.value = ""; 
+            }
+        }
+    </script>
+</body>
+</html>
